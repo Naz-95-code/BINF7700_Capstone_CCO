@@ -23,6 +23,4 @@ Through this capstone project, I aim to:
 - Improve how I document and communicate my work using Markdown and GitHub
 - Apply appropriate statistical and biological reasoning to real datasets
 - Become more confident in interpreting and presenting results
-- Build a research portfolio that reflects real-world academic and industry expectations
-
----
+- Build a research portfolio that reflects real-world academic and industry expectations.
