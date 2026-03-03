@@ -15,11 +15,11 @@ output_dir="results/spectra"
 
 mkdir -p "$output_dir"
 
-for file in "$input_dir"/*.vcf
+for file in "$input_dir"/*.vcf.gz
 do
     echo "Processing $file"
 
-    filename=$(basename "$file" .vcf)
+    filename=$(basename "$file" .vcf.gz)
 
     bcftools view -v snps "$file" | \
     bcftools query -f '%REF>%ALT\n' | \
