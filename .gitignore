@@ -17,3 +17,4 @@ results/
 *.log
 
 .DS_Store
+cosmic_input/
