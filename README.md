@@ -1,60 +1,71 @@
-# Universal Mutation Analysis Dashboard (UMAD)
+Universal Mutation Analysis Dashboard (UMAD)
 
-## Overview
+Overview
 
-The Universal Mutation Analysis Dashboard (UMAD) is a scalable bioinformatics pipeline designed to process and analyze large collections of Variant Call Format (VCF) files.
+The Universal Mutation Analysis Dashboard (UMAD) is a bioinformatics pipeline designed to process and analyze large collections of Variant Call Format (VCF) files from cancer genome datasets.
 
-The goal of UMAD is to provide a reproducible framework for mutation characterization, comparison across samples, and downstream statistical interpretation.
+The goal of UMAD is to provide a reproducible workflow for mutation characterization, comparison across samples, and biological interpretation of mutation patterns.
 
-This repository currently implements the mutation spectrum extraction module.
+The pipeline currently processes simulated cancer datasets (Breast Adenocarcinoma and Prostate Adenocarcinoma) and extracts key mutation metrics including mutation spectra, mutation burden, mutational signatures, and allele frequency distributions.
 
+These analyses support the development of an interactive dashboard for exploring mutation patterns across cancer samples.
 
-## Current Implemented Module
+⸻
 
-### Mutation Spectrum Extraction
+Current Implemented Modules
 
-This module:
+Mutation Spectrum Extraction
+	•	Filters SNPs (Single Nucleotide Polymorphisms)
+	•	Extracts mutation types (REF → ALT)
+	•	Counts mutation occurrences
+	•	Normalizes mutation frequencies
+	•	Combines spectra across samples
 
-- Filters SNPs (Single Nucleotide Polymorphisms)
-- Extracts mutation types (REF > ALT)
-- Computes mutation counts
-- Normalizes counts to proportions
-- Combines spectra across multiple samples
+Mutation Burden Analysis
+	•	Calculates total mutations per sample
+	•	Enables comparison of mutation loads across tumors
 
-## Project Structure
+COSMIC Mutational Signature Analysis
+	•	Identifies mutational signatures using combined spectra
+	•	Generates signature exposure plots and heatmaps
 
-```
+Allele Frequency Analysis
+	•	Extracts variant allele frequencies from VCF files using bcftools
+	•	Supports analysis of mutation prevalence and tumor clonality
+
+Project Structure
+
 universal-mutation-analysis-dashboard/
 │
-├── scripts/              # Shell scripts for mutation spectrum analysis
+├── scripts/
 │   ├── extract_spectrum.sh
-│   └── combine_spectra.sh
+│   ├── combine_spectra.sh
+│   └── extract_allele_frequency.sh
 │
 ├── data/
-│   ├── test/             # Small test VCF files
-│   └── full/             # Full dataset (80+ VCF files)
+│   ├── test/
+│   └── full/
 │
 ├── results/
-│   ├── spectra/          # Per-sample mutation spectra
-│   └── combined/         # Combined comparison tables
+│   ├── spectra/
+│   ├── combined/
+│   ├── allele_frequency/
+│   └── cosmic_fit_output/
 │
-└── docs/                 # Documentation and notes
-```
+└── docs/
 
-## Requirements
+Requirements
+	•	bcftools (v1.21)
+	•	Linux command-line environment
+	•	Python (for visualization)
 
-- bcftools (v1.21)
-- Linux command-line environment
 
-
-## Long-Term Vision
+Long-Term Vision
 
 UMAD is being developed as a modular system that will support:
-
-- Variant annotation
-- Mutation signature profiling
-- Cross-cancer comparison
-- Statistical visualization
-- Integration with interactive dashboards
-
+	•	Variant annotation
+	•	Mutation signature profiling
+	•	Cross-cancer comparison
+	•	Statistical visualization
+	•	Integration with interactive mutation analysis dashboards
 
