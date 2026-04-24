@@ -47,40 +47,6 @@ These analyses support the development of an **interactive dashboard for explori
 
 ```
 BINF7700_Capstone_CCO/
-│
-├── dashboard.py
-├── README.md
-├── requirements.txt
-│
-├── src/
-│   ├── plot_heatmap.py
-│   ├── plot_mutation_burden.py
-│   ├── plot_mutation_spectrum.py
-│   ├── plot_cosine_similarity.py
-│   ├── mann_whitney_test.py
-│   ├── biological_validation.py
-│
-├── scripts/
-│   ├── extract_spectrum.sh
-│   ├── combine_spectra.sh
-│   ├── combine_variant_types.sh
-│   ├── classify_variants.sh
-│
-├── data/
-│
-├── results/
-│   ├── spectra/
-│   ├── combined/
-│   └── cosmic_fit_output/
-│
-├── figures/
-│
-└── docs/
-
-```
-
-```
-BINF7700_Capstone_CCO/
 ├── dashboard.py
 ├── README.md
 ├── requirements.txt
@@ -164,11 +130,12 @@ The Streamlit dashboard provides:
 ```bash
 git clone https://github.com/Naz-95-code/BINF7700_Capstone_CCO.git
 cd BINF7700_Capstone_CCO
-conda activate vcf_env
 pip install -r requirements.txt
 streamlit run dashboard.py
+```
 
 ## Author
+
 Chinazo Christella Orji 
 M.Sc. Bioinformatics 
 Northeastern University, Toronto.
