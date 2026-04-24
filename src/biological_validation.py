@@ -3,9 +3,7 @@ import pandas as pd
 # Load synthetic exposures
 synthetic = pd.read_csv("../results/signature_exposures.tsv", sep="\t", index_col=0)
 
-# =========================
 # BIOLOGICAL VALIDATION
-# =========================
 
 # Split by cancer type
 breast = synthetic[synthetic.index.str.contains("Breast")]

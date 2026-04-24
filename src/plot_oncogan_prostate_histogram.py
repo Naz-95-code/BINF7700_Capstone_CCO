@@ -9,7 +9,6 @@ output_path = sys.argv[2]
 # Load data
 data = np.loadtxt(input_path)
 
-# Normalize (scale to TCGA-like range)
 scaled = data / np.max(data) * 150
 
 # Plot (normalized)
