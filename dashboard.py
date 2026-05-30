@@ -82,7 +82,7 @@ synthetic = load_synthetic_data(cancer)
 real = load_real_data(cancer)
 
 syn_vals = synthetic["total_mutations"]
-real_vals = real["mutation_count"]
+real_vals = real["total_mutations"]
 
 combined = pd.concat([
     pd.DataFrame({"mutation": syn_vals, "source": "Synthetic"}),
