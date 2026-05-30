@@ -23,13 +23,13 @@ across **synthetic (OncoGAN-generated)** and **real (TCGA-derived)** cancer data
 st.sidebar.title("Navigation")
 
 SYNTHETIC_FILES = {
-    "Breast": "data/synthetic/breast_mutation_burden.tsv",
-    "Prostate": "data/synthetic/prostate_mutation_burden.tsv",
+    "Breast": "data/txt/synthetic/breast_counts.txt",
+    "Prostate": "data/txt/synthetic/prostate_counts.txt",
 }
 
 REAL_FILES = {
-    "Breast": "data/real/tcga_breast_mutation_counts.txt",
-    "Prostate": "data/real/tcga_prostate_mutation_counts.txt",
+    "Breast": "data/txt/real_breast_counts.txt",
+    "Prostate": "data/txt/real_prostate_counts.txt",
 }
 
 SIGNATURE_FILE = "results/signature_exposures.tsv"
