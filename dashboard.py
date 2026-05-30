@@ -25,13 +25,13 @@ st.sidebar.title("Navigation")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 SYNTHETIC_FILES = {
-    "Breast": os.path.join(BASE_DIR, "data/txt/synthetic/breast_counts.txt"),
-    "Prostate": os.path.join(BASE_DIR, "data/txt/synthetic/prostate_counts.txt"),
+    "Breast": os.path.join(BASE_DIR, "data", "txt", "synthetic_breast_counts.txt"),
+    "Prostate": os.path.join(BASE_DIR, "data", "txt", "synthetic_prostate_counts.txt"),
 }
 
 REAL_FILES = {
-    "Breast": os.path.join(BASE_DIR, "data/txt/real_breast_counts.txt"),
-    "Prostate": os.path.join(BASE_DIR, "data/txt/real_prostate_counts.txt"),
+    "Breast": os.path.join(BASE_DIR, "data", "txt", "real_breast_counts.txt"),
+    "Prostate": os.path.join(BASE_DIR, "data", "txt", "real_prostate_counts.txt"),
 }
 
 SIGNATURE_FILE = os.path.join(BASE_DIR, "results/signature_exposures.tsv")
