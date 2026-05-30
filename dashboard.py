@@ -22,20 +22,22 @@ across **synthetic (OncoGAN-generated)** and **real (TCGA-derived)** cancer data
 
 st.sidebar.title("Navigation")
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 SYNTHETIC_FILES = {
-    "Breast": "data/txt/synthetic/breast_counts.txt",
-    "Prostate": "data/txt/synthetic/prostate_counts.txt",
+    "Breast": os.path.join(BASE_DIR, "data/txt/synthetic/breast_counts.txt"),
+    "Prostate": os.path.join(BASE_DIR, "data/txt/synthetic/prostate_counts.txt"),
 }
 
 REAL_FILES = {
-    "Breast": "data/txt/real_breast_counts.txt",
-    "Prostate": "data/txt/real_prostate_counts.txt",
+    "Breast": os.path.join(BASE_DIR, "data/txt/real_breast_counts.txt"),
+    "Prostate": os.path.join(BASE_DIR, "data/txt/real_prostate_counts.txt"),
 }
 
-SIGNATURE_FILE = "results/signature_exposures.tsv"
-VARIANT_FILE = "results/variant_type_summary.tsv"
-SPECTRA_FILE = "results/combined_spectra.tsv"
-COSMIC_SIG_FILE = "results/signature_exposures.tsv"
+SIGNATURE_FILE = os.path.join(BASE_DIR, "results/signature_exposures.tsv")
+VARIANT_FILE = os.path.join(BASE_DIR, "results/variant_type_summary.tsv")
+SPECTRA_FILE = os.path.join(BASE_DIR, "results/combined_spectra.tsv")
+COSMIC_SIG_FILE = os.path.join(BASE_DIR, "results/signature_exposures.tsv")
 
 @st.cache_data
 def load_synthetic_data(cancer):
