@@ -41,8 +41,7 @@ COSMIC_SIG_FILE = os.path.join(BASE_DIR, "results/signature_exposures.tsv")
 
 @st.cache_data
 def load_synthetic_data(cancer):
-    df = pd.read_csv(SYNTHETIC_FILES[cancer], sep="\t")
-    df.columns = df.columns.str.strip()
+    df = pd.read_csv(SYNTHETIC_FILES[cancer], sep="\t", header=None, names=["total_mutations"])
     df["total_mutations"] = pd.to_numeric(df["total_mutations"], errors="coerce")
     df = df.dropna()
     df["source"] = "Synthetic (OncoGAN)"
@@ -51,10 +50,8 @@ def load_synthetic_data(cancer):
 
 @st.cache_data
 def load_real_data(cancer):
-    df = pd.read_csv(REAL_FILES[cancer], sep=r"\s+", engine="python")
-    df = df.iloc[:, :4]
-    df.columns = ["study", "patient", "sample", "mutation_count"]
-    df["mutation_count"] = pd.to_numeric(df["mutation_count"], errors="coerce")
+    df = pd.read_csv(REAL_FILES[cancer], sep=r"\s+", header=None, names=["total_mutations"], engine="python")
+    df["total_mutations"] = pd.to_numeric(df["total_mutations"], errors="coerce")
     df = df.dropna()
     df["source"] = "Real (TCGA)"
     return df
