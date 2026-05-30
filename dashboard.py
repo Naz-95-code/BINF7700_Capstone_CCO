@@ -36,7 +36,7 @@ REAL_FILES = {
 
 SIGNATURE_FILE = os.path.join(BASE_DIR, "results/signature_exposures.tsv")
 VARIANT_FILE = os.path.join(BASE_DIR, "results/variant_type_summary.tsv")
-SPECTRA_FILE = os.path.join(BASE_DIR, "results/combined_spectra.tsv")
+SPECTRA_FILE = os.path.join(BASE_DIR, "results/spectra/combined_spectra.tsv")
 COSMIC_SIG_FILE = os.path.join(BASE_DIR, "results/signature_exposures.tsv")
 
 @st.cache_data
